@@ -10,3 +10,9 @@ starwarsapi:
     homeworlds: ${starwarsapi.url}planets/
     starships: ${starwarsapi.url}starships/
   cron: 0 0 0/1 * * *
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus

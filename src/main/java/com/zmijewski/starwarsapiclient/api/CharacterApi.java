@@ -2,7 +2,7 @@ package com.zmijewski.starwarsapiclient.api;
 
 import com.zmijewski.starwarsapiclient.api.model.CharacterModel;
 import com.zmijewski.starwarsapiclient.api.model.PageModel;
-import com.zmijewski.starwarsapiclient.application.CharacterService;
+import com.zmijewski.starwarsapiclient.application.CharacterQueryService;
 import com.zmijewski.starwarsapiclient.application.exceptions.EntityNotFoundException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -19,13 +19,13 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @Api("Characters")
 public class CharacterApi {
-    private final CharacterService characterService;
+    private final CharacterQueryService characterQueryService;
 
     @GetMapping
     @ApiOperation("Get characters page")
     @ApiResponse(code = 200, message = "Page was received successfully")
     public PageModel<CharacterModel> getAll(@PageableDefault Pageable pageable) {
-        return characterService.getAll(pageable);
+        return characterQueryService.getAll(pageable);
     }
 
     @GetMapping("/{id}")
@@ -35,7 +35,7 @@ public class CharacterApi {
             @ApiResponse(code = 404, message = "Characters with id not found")
     })
     public CharacterModel getById(@PathVariable("id") Long id) {
-        return characterService.getCharacterById(id);
+        return characterQueryService.getCharacterById(id);
     }
 
     @ExceptionHandler

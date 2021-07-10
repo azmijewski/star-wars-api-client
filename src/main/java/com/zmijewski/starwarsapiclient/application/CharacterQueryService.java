@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class CharacterService {
+public class CharacterQueryService {
     private final CharacterRepository characterRepository;
     private final CharacterMapper characterMapper;
 

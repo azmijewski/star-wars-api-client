@@ -13,3 +13,4 @@ starwarsapi:
     characters: ${starwarsapi.url}people/
     homeworlds: ${starwarsapi.url}planets/
     starships: ${starwarsapi.url}starships/
+  cron: 0 0 0/1 ? * * *

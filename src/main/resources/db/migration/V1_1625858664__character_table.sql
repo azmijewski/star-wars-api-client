@@ -1,5 +1,5 @@
 create table character (
-    id bigserial not null primary key,
+    id bigint not null primary key,
     name varchar(500) not null,
     height varchar(4),
     mass varchar(4),

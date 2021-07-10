@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    username: star_wars
+    password: star_wars
+    url: jdbc:postgresql://localhost:5432/star_wars
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+starwarsapi:
+  url: https://swapi.dev/api/
+  resources:
+    characters: ${starwarsapi.url}people/
+    homeworlds: ${starwarsapi.url}planets/
+    starships: ${starwarsapi.url}starships/

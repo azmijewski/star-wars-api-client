@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    username: ${db.testcontainer.username}
+    password: ${db.testcontainer.password}
+    url: ${db.testcontainer.url}
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      org.hibernate.flushMode: ALWAYS
+      hibernate.temp.use_jdbc_metadata_defaults: false
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  main:
+    allow-bean-definition-overriding: true

@@ -28,7 +28,7 @@ public class StarshipEntity {
 
     private String length;
 
-    private String maxAtmosphericSpeed;
+    private String maxAtmospheringSpeed;
 
     private String crew;
 

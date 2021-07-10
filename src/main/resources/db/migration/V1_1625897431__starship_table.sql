@@ -6,12 +6,12 @@ create table starship
     manufacturer varchar(100),
     cost_in_credits varchar(20),
     length varchar(35),
-    max_atmospheric_speed varchar(15),
+    max_atmosphering_speed varchar(30),
     crew varchar(20),
     passengers varchar(20),
     cargo_capacity varchar(35),
     consumables varchar(35),
-    hyperdrive_rating varchar(10),
-    mglt varchar(15),
+    hyperdrive_rating varchar(50),
+    mglt varchar(30),
     starship_class varchar(75)
 )

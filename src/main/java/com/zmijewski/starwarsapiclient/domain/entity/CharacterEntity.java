@@ -31,13 +31,14 @@ public class CharacterEntity {
 
     private String birthYear;
 
+
     private String gender;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "homeworld_id")
     private HomeWorldEntity homeworld;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "character_starship",
         joinColumns = @JoinColumn(name = "character_id"),
         inverseJoinColumns = @JoinColumn(name = "starship_id"))

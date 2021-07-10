@@ -16,7 +16,7 @@ public class StarshipDTO {
     String length;
     String crew;
     String passengers;
-    String maxAtmosphericSpeed;
+    String maxAtmospheringSpeed;
     String hyperdriveRating;
     String cargoCapacity;
     String consumables;

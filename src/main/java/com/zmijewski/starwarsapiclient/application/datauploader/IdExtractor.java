@@ -1,4 +1,4 @@
-package com.zmijewski.starwarsapiclient.service.datauploader;
+package com.zmijewski.starwarsapiclient.application.datauploader;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -27,6 +27,6 @@ public class IdExtractor {
     }
 
     private Long extractId(String url, String prefix) {
-        return Long.valueOf(url.replace(prefix, ""));
+        return Long.valueOf(url.replace(prefix, "").replace("/", ""));
     }
 }

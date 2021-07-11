@@ -3,7 +3,6 @@ package com.zmijewski.starwarsapiclient.application.mapper;
 import com.zmijewski.starwarsapiclient.api.model.PlanetModel;
 import com.zmijewski.starwarsapiclient.client.dto.PlanetDTO;
 import com.zmijewski.starwarsapiclient.domain.entity.PlanetEntity;
-import com.zmijewski.starwarsapiclient.application.datauploader.IdExtractor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

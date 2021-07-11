@@ -1,10 +1,10 @@
-package com.zmijewski.starwarsapiclient.application.datauploader;
+package com.zmijewski.starwarsapiclient.application.mapper;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class IdExtractor {
+class IdExtractor {
     @Value("${starwarsapi.resources.characters}")
     private String characterUrl;
 

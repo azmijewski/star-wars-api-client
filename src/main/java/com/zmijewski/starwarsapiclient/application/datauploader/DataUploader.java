@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class DataUploader {
+class DataUploader {
     private final DataFetcher dataFetcher;
     private final StarshipMapper starshipMapper;
     private final PlanetMapper planetMapper;

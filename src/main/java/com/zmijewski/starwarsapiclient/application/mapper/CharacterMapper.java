@@ -5,7 +5,6 @@ import com.zmijewski.starwarsapiclient.client.dto.CharacterDTO;
 import com.zmijewski.starwarsapiclient.domain.entity.CharacterEntity;
 import com.zmijewski.starwarsapiclient.domain.entity.PlanetEntity;
 import com.zmijewski.starwarsapiclient.domain.entity.StarshipEntity;
-import com.zmijewski.starwarsapiclient.application.datauploader.IdExtractor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

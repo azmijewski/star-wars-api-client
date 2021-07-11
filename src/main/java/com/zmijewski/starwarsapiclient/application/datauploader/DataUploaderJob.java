@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Component
 @RequiredArgsConstructor
@@ -16,14 +16,11 @@ import java.time.LocalDate;
 public class DataUploaderJob {
     private final DataUploader dataUploader;
 
-    @PostConstruct
-    public void uploadDataOnStart() {
-        dataUploader.uploadDataFromApi();
-    }
-
     @Scheduled(cron = "${starwarsapi.cron}")
+    @PostConstruct
     public void uploadDataFromApi() {
-        log.info("Start uploading data form api at: {}", LocalDate.now());
+        log.info("Start uploading data form api at: {}", LocalDateTime.now());
         dataUploader.uploadDataFromApi();
+        log.info("Data successfully uploaded");
     }
 }

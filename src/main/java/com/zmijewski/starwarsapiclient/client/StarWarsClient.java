@@ -1,7 +1,7 @@
 package com.zmijewski.starwarsapiclient.client;
 
 import com.zmijewski.starwarsapiclient.client.dto.CharacterDTO;
-import com.zmijewski.starwarsapiclient.client.dto.HomeWorldDTO;
+import com.zmijewski.starwarsapiclient.client.dto.PlanetDTO;
 import com.zmijewski.starwarsapiclient.client.dto.PageDTO;
 import com.zmijewski.starwarsapiclient.client.dto.StarshipDTO;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -19,7 +19,7 @@ public interface StarWarsClient {
     PageDTO<CharacterDTO> getCharacters(@RequestParam("page") Integer page);
 
     @GetMapping("planets/")
-    PageDTO<HomeWorldDTO> getHomeWorlds(@RequestParam("page") Integer page);
+    PageDTO<PlanetDTO> getPlanets(@RequestParam("page") Integer page);
 
     @GetMapping("starships/")
     PageDTO<StarshipDTO> getStarships(@RequestParam("page") Integer page);

@@ -35,8 +35,8 @@ public class CharacterEntity {
     private String gender;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "homeworld_id")
-    private HomeWorldEntity homeworld;
+    @JoinColumn(name = "homeworld")
+    private PlanetEntity homeworld;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "character_starship",

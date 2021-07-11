@@ -3,7 +3,7 @@ package com.zmijewski.starwarsapiclient.api.model;
 import lombok.Value;
 
 @Value
-public class HomeWorldModel {
+public class PlanetModel {
     String name;
     String rotationPeriod;
     String orbitalPeriod;

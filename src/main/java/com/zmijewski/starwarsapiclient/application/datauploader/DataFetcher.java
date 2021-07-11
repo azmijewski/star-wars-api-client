@@ -2,7 +2,7 @@ package com.zmijewski.starwarsapiclient.application.datauploader;
 
 import com.zmijewski.starwarsapiclient.client.StarWarsClient;
 import com.zmijewski.starwarsapiclient.client.dto.CharacterDTO;
-import com.zmijewski.starwarsapiclient.client.dto.HomeWorldDTO;
+import com.zmijewski.starwarsapiclient.client.dto.PlanetDTO;
 import com.zmijewski.starwarsapiclient.client.dto.PageDTO;
 import com.zmijewski.starwarsapiclient.client.dto.StarshipDTO;
 import lombok.RequiredArgsConstructor;
@@ -26,8 +26,8 @@ public class DataFetcher {
         return fetchData(starWarsClient::getStarships);
     }
 
-    public List<HomeWorldDTO> getHomeWorlds() {
-        return fetchData(starWarsClient::getHomeWorlds);
+    public List<PlanetDTO> getPlanets() {
+        return fetchData(starWarsClient::getPlanets);
     }
 
     private <T> List<T> fetchData(Function<Integer, PageDTO<T>> function) {

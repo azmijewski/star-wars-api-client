@@ -6,7 +6,7 @@ import lombok.Value;
 
 @Value
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class HomeWorldDTO {
+public class PlanetDTO {
     String name;
     String climate;
     String diameter;

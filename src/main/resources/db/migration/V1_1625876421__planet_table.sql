@@ -1,4 +1,4 @@
-create table homeworld
+create table planet
 (
     id bigint not null primary key,
     name varchar(75) not null,

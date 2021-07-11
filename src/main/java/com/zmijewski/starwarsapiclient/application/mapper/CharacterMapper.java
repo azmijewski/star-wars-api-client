@@ -3,7 +3,7 @@ package com.zmijewski.starwarsapiclient.application.mapper;
 import com.zmijewski.starwarsapiclient.api.model.CharacterModel;
 import com.zmijewski.starwarsapiclient.client.dto.CharacterDTO;
 import com.zmijewski.starwarsapiclient.domain.entity.CharacterEntity;
-import com.zmijewski.starwarsapiclient.domain.entity.HomeWorldEntity;
+import com.zmijewski.starwarsapiclient.domain.entity.PlanetEntity;
 import com.zmijewski.starwarsapiclient.domain.entity.StarshipEntity;
 import com.zmijewski.starwarsapiclient.application.datauploader.IdExtractor;
 import lombok.RequiredArgsConstructor;
@@ -17,9 +17,9 @@ import java.util.stream.Collectors;
 public class CharacterMapper {
     private final IdExtractor idExtractor;
     private final StarshipMapper starshipMapper;
-    private final HomeworldMapper homeworldMapper;
+    private final PlanetMapper planetMapper;
 
-    public CharacterEntity map(CharacterDTO characterDTO, Map<Long, HomeWorldEntity> homeworldMap, Map<Long, StarshipEntity> starshipMap) {
+    public CharacterEntity map(CharacterDTO characterDTO, Map<Long, PlanetEntity> planetMap, Map<Long, StarshipEntity> starshipMap) {
         var starships = characterDTO.getStarships()
                 .stream()
                 .map(starshipUrl -> this.getStarship(starshipMap, starshipUrl))
@@ -28,7 +28,7 @@ public class CharacterMapper {
         return new CharacterEntity(idExtractor.extractCharacterId(characterDTO.getUrl()), characterDTO.getName(),
                 characterDTO.getHeight(), characterDTO.getMass(), characterDTO.getHairColor(),
                 characterDTO.getSkinColor(), characterDTO.getEyeColor(), characterDTO.getBirthYear(),
-                characterDTO.getGender(), getHomeworld(homeworldMap, characterDTO.getHomeworld()), starships);
+                characterDTO.getGender(), getHomeworld(planetMap, characterDTO.getHomeworld()), starships);
     }
 
     public CharacterModel map(CharacterEntity characterEntity) {
@@ -40,11 +40,11 @@ public class CharacterMapper {
         return new CharacterModel(characterEntity.getId(), characterEntity.getName(), characterEntity.getHeight(),
                 characterEntity.getMass(), characterEntity.getHairColor(), characterEntity.getSkinColor(),
                 characterEntity.getEyeColor(), characterEntity.getBirthYear(), characterEntity.getGender(), starships,
-                homeworldMapper.map(characterEntity.getHomeworld()));
+                planetMapper.map(characterEntity.getHomeworld()));
     }
 
-    private HomeWorldEntity getHomeworld(Map<Long, HomeWorldEntity> homeworldMap, String url) {
-        return homeworldMap.get(idExtractor.extractHomeworldId(url));
+    private PlanetEntity getHomeworld(Map<Long, PlanetEntity> planetMap, String url) {
+        return planetMap.get(idExtractor.extractPlanetId(url));
     }
 
     private StarshipEntity getStarship(Map<Long, StarshipEntity> starshipMap, String url) {

@@ -13,8 +13,8 @@ import javax.persistence.Table;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Getter
-@Table(name = "homeworld")
-public class HomeWorldEntity {
+@Table(name = "planet")
+public class PlanetEntity {
     @Id
     private Long id;
 

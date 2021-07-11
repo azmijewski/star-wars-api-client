@@ -1,5 +1,5 @@
 alter table character
-    add column homeworld_id bigint;
+    add column homeworld bigint;
 
 alter table character
-    add constraint character__homeworld_id_fk foreign key (homeworld_id) references homeworld (id);
+    add constraint character__planet_id_fk foreign key (homeworld) references planet (id);

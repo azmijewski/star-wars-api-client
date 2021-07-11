@@ -15,3 +15,11 @@ spring:
     show-sql: true
   main:
     allow-bean-definition-overriding: true
+
+starwarsapi:
+  url: http://star-wars/
+  resources:
+    characters: ${starwarsapi.url}people/
+    planets: ${starwarsapi.url}planets/
+    starships: ${starwarsapi.url}starships/
+  cron: 0 0 0/1 * * *

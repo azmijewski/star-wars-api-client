@@ -7,7 +7,7 @@ starwarsapi:
   url: https://swapi.dev/api/
   resources:
     characters: ${starwarsapi.url}people/
-    homeworlds: ${starwarsapi.url}planets/
+    planets: ${starwarsapi.url}planets/
     starships: ${starwarsapi.url}starships/
   cron: 0 0 0/1 * * *
 

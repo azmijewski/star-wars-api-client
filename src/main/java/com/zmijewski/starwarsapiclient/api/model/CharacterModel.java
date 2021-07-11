@@ -16,5 +16,5 @@ public class CharacterModel {
     String birthYear;
     String gender;
     List<StarshipModel> starships;
-    HomeWorldModel homeworld;
+    PlanetModel homeworld;
 }

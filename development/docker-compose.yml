@@ -1,0 +1,17 @@
+version: '3.8'
+
+volumes:
+  postgresql_data:
+    driver: local
+
+services:
+  postgresql:
+    image: postgres:12.5
+    volumes:
+      - postgresql_data:/var/lib/postgres
+    environment:
+      POSTGRES_DATABASE: star_wars
+      POSTGRES_USER: star_wars
+      POSTGRES_PASSWORD: star_wars
+    ports:
+      - 5432:5432
